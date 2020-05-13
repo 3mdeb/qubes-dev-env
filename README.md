@@ -9,7 +9,20 @@ QubesOS build / dev env in a Docker container
 * Clone [qubes-builder](git@github.com:QubesOS/qubes-builder.git)
 
 ```shell
-$ git clone git@github.com:QubesOS/qubes-builder.git
+$ git clone https://github.com/QubesOS/qubes-builder.git
+```
+
+* Clone `qubes-dev-env`
+
+```shell
+$ cd qubes-builder
+$ git clone https://github.com/3mdeb/qubes-dev-env.git
+```
+
+* Build the container
+
+```shell
+$ cd qubes-dev-env && ./build.sh && cd -
 ```
 
 * Start the container
@@ -35,6 +48,7 @@ $ ./qubes-dev-env/run.sh
 ```shell
 (docker)$ cd qubes-src/builder-rpm
 (docker)$ git apply ../../qubes-dev-env/patches/builder-rpm-release-detection-workaround.patch
+(docker)$ cd -
 ```
 
 * Build
