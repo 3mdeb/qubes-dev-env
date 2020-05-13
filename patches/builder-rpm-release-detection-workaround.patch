@@ -1,0 +1,18 @@
+diff --git a/prepare-chroot-builder b/prepare-chroot-builder
+index 8dfc52ebd606..41d4b0c1b535 100755
+--- a/prepare-chroot-builder
++++ b/prepare-chroot-builder
+@@ -41,11 +41,11 @@ else
+     fi
+ fi
+ 
+-if [ -f /etc/debian_version ]; then
++# if [ -f /etc/debian_version ]; then
+     # On Debian system-release version isn't properly detected (because of
+     # relocated rpmdb)
+     YUM_OPTS="$YUM_OPTS --releasever=${DIST_VER}"
+-fi
++# fi
+ 
+ prepare_chroot_proc () {
+     mount -t proc proc "$DIR/proc"
